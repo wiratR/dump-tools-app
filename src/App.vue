@@ -1,41 +1,51 @@
 <template>
   <div id="app">
-    <img
-      src="@/assets/vue.png"
-      alt="Vue.js logo"
-      title="Vue.js"
-      class="logo"
-    />
-    <img
-      src="@/assets/nw.png"
-      alt="NW.js logo"
-      title="NW.js"
-      class="logo"
-    />
-    <HelloWorld msg="Welcome to your Vue.js Desktop App in NW.js!" />
+
+    <div class="parent-wrapper">
+      <DropText />
+    </div>
+
+    <div class="parent-wrapper">
+      <DropMarkdown />
+    </div>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue';
+import DropText from './components/DropText.vue'
+import DropMarkdown from './components/DropMarkdown.vue'
 
 export default {
-  name: 'App',
+  name: 'app',
   components: {
-    HelloWorld
+    DropText, DropMarkdown
   }
-};
+}
 </script>
 
+
 <style>
-#app {
-  margin-top: 60px;
-  color: #2C3E50;
-  font-family: 'Avenir', sans-serif;
-  text-align: center;
+*{
+  box-sizing: border-box;
 }
-.logo {
-  max-height: 140px;
-  margin: 0px 10px;
+
+html, body, #app{
+  width:100%;
+  height:100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+body{
+  background-color: #fff;
+  padding:1rem;
+}
+
+.parent-wrapper{
+  margin-bottom:1rem;
+  width:100%;
+  height:50%; /* was 50% */
+
 }
 </style>
